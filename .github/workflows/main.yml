@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
+        working-directory: fnf_ds_project
         run: make
       - name: Upload ROM
         uses: actions/upload-artifact@v4
         with:
           name: fnf_ds
-          path: fnf_ds.nds
+          path: fnf_ds_project/fnf_ds.nds
